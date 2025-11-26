@@ -27,7 +27,7 @@ class WC_Gallery_Updater {
         }
 
         // Cache key
-        $transient_key = 'wc_gallery_gh_update_' . $this->slug;
+        $transient_key = 'wc_gallery_gh_update_' . $this->slug . '_test';
         $cached_response = get_transient($transient_key);
 
         if ($cached_response) {
