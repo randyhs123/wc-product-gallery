@@ -3,7 +3,7 @@
  * Plugin Name: WC Product Gallery
  * Plugin URI: https://harunstudio.com
  * Description: Advanced product gallery with mobile swipe support and responsive thumbnail navigation
- * Version: 1.0.2
+ * Version: 1.0.4
  * Author: Harun Studio
  * Author URI: https://harunstudio.com
  * License: GPL v2 or later
@@ -17,20 +17,22 @@ if (!defined('ABSPATH')) {
 }
 
 // Define plugin constants
-define('WC_GALLERY_VERSION', '1.0.2');
+define('WC_GALLERY_VERSION', '1.0.4');
 define('WC_GALLERY_PATH', plugin_dir_path(__FILE__));
 define('WC_GALLERY_URL', plugin_dir_url(__FILE__));
 
-// Custom GitHub Updater
-require_once WC_GALLERY_PATH . 'includes/class-gh-updater.php';
+// Plugin Update Checker
+require_once WC_GALLERY_PATH . 'includes/plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
-if (is_admin()) {
-    new WC_Gallery_Updater(
-        __FILE__,
-        'randyhs123',
-        'wc-product-gallery'
-    );
-}
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+    'https://github.com/randyhs123/wc-product-gallery',
+    __FILE__,
+    'wc-product-gallery'
+);
+
+// Optional: Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
 
 /**
  * Main Plugin Class

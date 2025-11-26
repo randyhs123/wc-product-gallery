@@ -1,6 +1,6 @@
 /**
  * WC Product Gallery JavaScript
- * Version: 1.0.0
+ * Version: 1.0.4
  */
 
 document.addEventListener("DOMContentLoaded", function () {
