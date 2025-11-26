@@ -3,7 +3,7 @@
  * Plugin Name: WC Product Gallery
  * Plugin URI: https://harunstudio.com
  * Description: Advanced product gallery with mobile swipe support and responsive thumbnail navigation
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Harun Studio
  * Author URI: https://harunstudio.com
  * License: GPL v2 or later
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define plugin constants
-define('WC_GALLERY_VERSION', '1.0.2');
+define('WC_GALLERY_VERSION', '1.0.3');
 define('WC_GALLERY_PATH', plugin_dir_path(__FILE__));
 define('WC_GALLERY_URL', plugin_dir_url(__FILE__));
 
