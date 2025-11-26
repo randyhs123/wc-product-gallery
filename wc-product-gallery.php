@@ -21,6 +21,17 @@ define('WC_GALLERY_VERSION', '1.0.2');
 define('WC_GALLERY_PATH', plugin_dir_path(__FILE__));
 define('WC_GALLERY_URL', plugin_dir_url(__FILE__));
 
+// Custom GitHub Updater
+require_once WC_GALLERY_PATH . 'includes/class-gh-updater.php';
+
+if (is_admin()) {
+    new WC_Gallery_Updater(
+        __FILE__,
+        'randyhs123',
+        'wc-product-gallery'
+    );
+}
+
 /**
  * Main Plugin Class
  */
